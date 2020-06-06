@@ -40,10 +40,10 @@ resource "aws_security_group" "secGrp1" {
 }
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "terraformupandrunningstate"
-
+  force_destroy = true
   # Prevent accidental deletion of this S3 bucket
   lifecycle {
-    prevent_destroy = true
+   prevent_destroy = true
   }
 
   # Enable versioning so we can see the full revision history of our
