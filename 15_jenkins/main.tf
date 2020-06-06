@@ -6,13 +6,12 @@ resource "aws_instance" "my-instance" {
   instance_type          = "t2.micro"
   key_name 		 = "JenkinsMumbai"
   vpc_security_group_ids = [aws_security_group.secGrp1.id] 
-  
 user_data = <<-EOF
-            #!/bin/bash
-             sudo apt-get update	
-	     sudo apt-get install -y docker.io 
-	     sudo docker run -d -p 50000:50000 -p 8080:8080 anjurose/jenkins
-	     EOF
+		#! /bin/bash
+                sudo apt-get update
+		sudo apt-get install -y docker.io
+		sudo docker run -d -p 50000:50000 -p 8080:8080 anjurose/jenkins
+		EOF  
 tags = {
     Name = "ProdServer3"
   }
