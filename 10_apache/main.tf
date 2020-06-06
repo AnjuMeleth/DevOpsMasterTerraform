@@ -1,18 +1,19 @@
 provider "aws" {
   region = "ap-south-1"
 }
-resource "aws_instance" "my-instance" {
+resource "aws_instance" "myinstance" {
   ami                    = "ami-0b44050b2d893d5f7"
   instance_type          = "t2.micro"
   key_name 		 = "JenkinsMumbai"
   vpc_security_group_ids = [aws_security_group.secGrp1.id] 
   
 user_data = <<-EOF
-              #!/bin/bash
-	      sudo apt-get update	
-	      sudo apt-get install -y apache2
-	      sudo service apache2 start  	
-	      EOF
+		#! /bin/bash
+                sudo apt-get update
+		sudo apt-get install -y apache2
+		sudo systemctl start apache2
+		sudo systemctl enable apache2
+		EOF
 tags = {
     Name = "ProdServer2"
   }
