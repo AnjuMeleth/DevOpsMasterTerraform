@@ -1,0 +1,4 @@
+Step 1: git clone https://github.com/AnjuMeleth/DevOpsMasterTerraform.git
+Step 2: sh terraform_install.sh 
+Step 3: terraform --version
+

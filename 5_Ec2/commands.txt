@@ -1,0 +1,5 @@
+Step 1: vi main.tf
+Step 2: ls -al
+Step 3: terraform init
+Step 4: terraform plan
+Step 5: terraform apply
