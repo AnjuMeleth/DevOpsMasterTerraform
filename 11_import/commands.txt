@@ -1,0 +1,5 @@
+Step 1: Create a manual instance
+Step 2: vi main.tf
+Step 3: terraform init
+Step 4: terraform import aws_instance.mymanualinstance i-0e5fa92fe0f084c8f
+Step 5: terraform show

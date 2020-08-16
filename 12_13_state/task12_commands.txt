@@ -1,0 +1,3 @@
+Step 1: vi main.tf
+Step 2: terraform init
+Step 3: terraform apply

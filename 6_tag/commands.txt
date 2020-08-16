@@ -1,4 +1,33 @@
+Task 6
+=================
 Step 1: vi main.tf
 Step 2: terraform apply
 Step 4: terraform init
+Step 5: terraform apply
+
+
+Task 7
+======================
+Step 1: vi main.tf
+Step 2: Include the key_name 
+key_name               = “your .pem filename"
+Step 3: terraform apply
+
+Task 8
+=====================
+Step 1: vi main.tf
+Step 2: Include the details of a new security group
+resource "aws_security_group" "secGrp1" {
+
+  ingress {
+    from_port   = 22 
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+Step 3: Include the security group in aws_instance resource
+vpc_security_group_ids = [aws_security_group.secGrp1.id] 
+
+Step 4: terraform graph 
 Step 5: terraform apply
